@@ -1,4 +1,4 @@
-﻿using LectorsSeminarsDataAccessLayer;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,9 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using T3.LectorsSeminarsNamespace;
-
-
+using T3.LectorsSeminarsDataAccessLayerWCFService;
 
 
 
@@ -18,15 +16,21 @@ namespace T3
 {
     public partial class MainWindow : Form
     {
-        AbstractSessionAdapter client;
+        LectorsSeminarsDataAccessLayerServiceClient wcfClient =
+            new LectorsSeminarsDataAccessLayerServiceClient();
+
+        ISessionWraper client;
 
         public MainWindow()
         {
             InitializeComponent();
-            //var client = new LectorsSeminarsServiceClient();
+            MessageBox.Show(wcfClient.DoWork("yp"));
+            //wcfClient.Close();
 
-            client = new SessionAdapterFactory(false).OpenSessionAdapter();
-
+            client =  new SessionWraperFromWCF(wcfClient);
+            /*client = new LectorsSeminarsDataAccessLayer.
+                SessionWraperFactory(false).OpenSessionAdapter();
+            */
             RecreateSeminarsTree();
         }
 
@@ -128,8 +132,8 @@ namespace T3
             if (seminar.Name == null)
                 return;
 
-            client.Id = (Int32) e.Data.GetData(typeof(Int32));
-            var lector = client.LectorById;
+            Int32 Id = (Int32) e.Data.GetData(typeof(Int32));
+            var lector = client.GetLectorById(Id);
 
             seminarNode.Nodes.Add(new TreeNode(lector.Name) { Tag = lector } ) ;
             
@@ -140,7 +144,8 @@ namespace T3
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            client.CloseSession = true;
+            client.CloseSession();
+            //wcfClient.Close();
         }
 
         private void newSeminarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -177,8 +182,8 @@ namespace T3
             if (seminar.Name == null) // Root seminar contains all lectors
                 // and therefore does not need to obtain any more
                 return;
-            client.Id = (Int32)e.Data.GetData(typeof(Int32));
-            var lector = client.LectorById;
+            Int32 Id = (Int32)e.Data.GetData(typeof(Int32));
+            var lector = client.GetLectorById(Id);
             lectorsListBox.Items.Add(lector);
             seminar.Lectors.Add(lector);
             client.ObjectToSave = seminar;

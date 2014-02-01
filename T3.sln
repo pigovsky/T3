@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T3", "T3\T3.csproj", "{4F12B0FA-8CD2-4B92-8007-7D00E50DA333}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T3_Windows_Forms_Cilent", "T3\T3_Windows_Forms_Cilent.csproj", "{4F12B0FA-8CD2-4B92-8007-7D00E50DA333}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LectorsSeminarsDataAccessLayer", "LectorsSeminarsDataAccessLayer\LectorsSeminarsDataAccessLayer.csproj", "{76301FC9-839D-4339-9971-127F56E7CE51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LectorsSeminarsDataAccessLayerWCFService", "LectorsSeminarsDataAccessLayerWCFService\LectorsSeminarsDataAccessLayerWCFService.csproj", "{F41990B6-1EF8-4AFC-A4C6-090E1BE572D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +17,14 @@ Global
 		{4F12B0FA-8CD2-4B92-8007-7D00E50DA333}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F12B0FA-8CD2-4B92-8007-7D00E50DA333}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F12B0FA-8CD2-4B92-8007-7D00E50DA333}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76301FC9-839D-4339-9971-127F56E7CE51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76301FC9-839D-4339-9971-127F56E7CE51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76301FC9-839D-4339-9971-127F56E7CE51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76301FC9-839D-4339-9971-127F56E7CE51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F41990B6-1EF8-4AFC-A4C6-090E1BE572D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F41990B6-1EF8-4AFC-A4C6-090E1BE572D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F41990B6-1EF8-4AFC-A4C6-090E1BE572D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F41990B6-1EF8-4AFC-A4C6-090E1BE572D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

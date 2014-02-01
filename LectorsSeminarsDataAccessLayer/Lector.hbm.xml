@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+  <class name="LectorsSeminarsDataAccessLayer.Lector,LectorsSeminarsDataAccessLayer" table="lector">
+    <id name="Id" column="lector_id"
+        generator="native"
+        type="Int32" unsaved-value="0"></id>
+    <property name="Name" column="lector_name" type="string"></property>
+    <property name="Birthday" column="lector_birthday" type="DateTime"></property>
+    <idbag name="Seminars" table="qualref">
+      <collection-id column="id" type="Int32">
+        <generator  class="native"></generator>
+      </collection-id>
+      <key column="lector_id"></key>
+      <many-to-many class="LectorsSeminarsDataAccessLayer.Seminar,LectorsSeminarsDataAccessLayer" column="seminar_id" ></many-to-many>
+      
+    </idbag>
+  </class>
+  
+</hibernate-mapping>

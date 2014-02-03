@@ -19,7 +19,7 @@ namespace T3
         LectorsSeminarsDataAccessLayerServiceClient wcfClient =
             new LectorsSeminarsDataAccessLayerServiceClient();
 
-        ISessionWraper client;
+        SessionWraperFromWCF client;
 
         public MainWindow()
         {
@@ -36,9 +36,8 @@ namespace T3
 
         private void RecreateSeminarsTree()
         {
-            var allLectorsNode = new TreeNode("All") { 
-                Name = null,
-                Tag = new Seminar() { Lectors = client.AllLectors } 
+            var allLectorsNode = new TreeNode("All") {                 
+                Tag = new Seminar(null) { Lectors = client.AllLectors } 
             };
             allLectorsNode.Nodes.Add("stub");
 
@@ -69,9 +68,13 @@ namespace T3
             seminarNode.Nodes.Clear();
             foreach(var lector in seminar.Lectors)
             {
-                TreeNode lectorNode = new TreeNode(lector.Name);
-                seminarNode.Nodes.Add(lectorNode);
-                lectorNode.Tag = lector;
+                var name = lector.Name;
+                if (name != null)
+                {
+                    TreeNode lectorNode = new TreeNode(name);
+                    seminarNode.Nodes.Add(lectorNode);
+                    lectorNode.Tag = lector;
+                }
             }
         }
 
@@ -82,9 +85,15 @@ namespace T3
                 return;
             var seminar = seminarNode.Tag as Seminar;
             lectorsListBox.Items.Clear();
-            
+
+            var count = lectorsListBox.Items.Count;
+
             foreach (var lector in seminar.Lectors)
-                lectorsListBox.Items.Add(lector);
+            {
+                var name = lector.Name;
+                if (name!=null)
+                    lectorsListBox.Items.Add(lector.Name);
+            }
 
             lectorsListBox.Tag = seminar;
         }
@@ -136,32 +145,42 @@ namespace T3
             var lector = client.GetLectorById(Id);
 
             seminarNode.Nodes.Add(new TreeNode(lector.Name) { Tag = lector } ) ;
-            
-            seminar.Lectors.Add(lector);
 
-            client.ObjectToSave = seminar;
+            seminar.AddLector(lector);
+            
         }
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             client.CloseSession();
-            //wcfClient.Close();
+            wcfClient.Close();
         }
 
         private void newSeminarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateNew(new Seminar());
+            CreateNewSeminar();
         }
 
-        private void CreateNew(IdNamable obj)
+        private void CreateNewLector()
         {
             EditSeminar editSeminar = new EditSeminar();
             editSeminar.ShowDialog();
 
             if (editSeminar.SeminarName != null)
-            {
-                obj.Name = editSeminar.SeminarName;
-                client.ObjectToSave = obj;
+            {                
+                client.CreateLector(editSeminar.SeminarName);
+                RecreateSeminarsTree();
+            }
+        }
+
+        private void CreateNewSeminar()
+        {
+            EditSeminar editSeminar = new EditSeminar();
+            editSeminar.ShowDialog();
+
+            if (editSeminar.SeminarName != null)
+            {                 
+                client.CreateSeminar(editSeminar.SeminarName);
                 RecreateSeminarsTree();
             }
         }
@@ -185,8 +204,7 @@ namespace T3
             Int32 Id = (Int32)e.Data.GetData(typeof(Int32));
             var lector = client.GetLectorById(Id);
             lectorsListBox.Items.Add(lector);
-            seminar.Lectors.Add(lector);
-            client.ObjectToSave = seminar;
+            seminar.AddLector(lector);            
         }
 
         private void lectorsListBox_DragEnter(object sender, DragEventArgs e)
@@ -206,7 +224,7 @@ namespace T3
                 var seminar = selectedNode.Tag as Seminar;
                 if (seminar.Name != null)
                 {
-                    client.ObjectToDelete = seminar;
+                    client.DeleteSeminar(seminar);
                     seminarsAndLectorsTreeView.Nodes.
                         Remove(selectedNode);                        
                 }
@@ -217,13 +235,12 @@ namespace T3
                 var lector = selectedNode.Tag as Lector;
                 if (seminar.Name == null)
                 {
-                    client.ObjectToDelete = lector;
+                    client.DeleteLector(lector);
                     RecreateSeminarsTree();
                 }
                 else
                 {
-                    seminar.Lectors.Remove(lector);
-                    client.ObjectToSave = seminar;
+                    seminar.RemoveLector(lector);                    
                 }
                 selectedNode.Parent.Nodes.Remove(selectedNode);
             }
@@ -231,7 +248,7 @@ namespace T3
 
         private void newLecturerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateNew(new Lector());
+            CreateNewLector();
         }
     }
 }

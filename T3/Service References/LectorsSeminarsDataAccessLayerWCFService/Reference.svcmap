@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5366d9e5-fc25-428f-b812-84ce1ce652c5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dc22d088-4a5b-48e4-a8d3-75a255659000" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -9,9 +9,7 @@
     <GenerateInternalTypes>false</GenerateInternalTypes>
     <GenerateMessageContracts>false</GenerateMessageContracts>
     <NamespaceMappings />
-    <CollectionMappings>
-      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
-    </CollectionMappings>
+    <CollectionMappings />
     <GenerateSerializableTypes>true</GenerateSerializableTypes>
     <Serializer>Auto</Serializer>
     <UseSerializerForFaults>true</UseSerializerForFaults>
@@ -24,11 +22,11 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/LectorsSeminarsDataAccessLayerWCFService/LectorsSeminarsDataAccessLayerService/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="LectorsSeminarsDataAccessLayerService.wsdl" MetadataType="Wsdl" ID="fa26f701-1a85-496d-843f-db87e987b6c0" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LectorsSeminarsDataAccessLayerWCFService/LectorsSeminarsDataAccessLayerService/?wsdl" />
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="b74fb292-a58f-41d0-a407-00266226a645" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LectorsSeminarsDataAccessLayerWCFService/LectorsSeminarsDataAccessLayerService/?disco" />
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="c179fe92-5760-46d4-a1e2-433db8cbe6b0" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LectorsSeminarsDataAccessLayerWCFService/LectorsSeminarsDataAccessLayerService/?xsd=xsd0" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="31098f55-12c1-423c-806a-710c7e4bca80" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LectorsSeminarsDataAccessLayerWCFService/LectorsSeminarsDataAccessLayerService/?xsd=xsd1" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="e41fac65-0efc-4e19-b7fd-96c3577d13a2" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LectorsSeminarsDataAccessLayerWCFService/LectorsSeminarsDataAccessLayerService/?xsd=xsd2" />
+    <MetadataFile FileName="LectorsSeminarsDataAccessLayerService.wsdl" MetadataType="Wsdl" ID="41c6364e-d62c-4e1f-a435-7b7e7212864f" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LectorsSeminarsDataAccessLayerWCFService/LectorsSeminarsDataAccessLayerService/?wsdl" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="83295bdd-617f-44d2-828e-76f93c58859b" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LectorsSeminarsDataAccessLayerWCFService/LectorsSeminarsDataAccessLayerService/?disco" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="2c1478cc-996a-40c0-831d-b370b76dbf30" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LectorsSeminarsDataAccessLayerWCFService/LectorsSeminarsDataAccessLayerService/?xsd=xsd0" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="48bddb8d-7da7-4daa-9ee3-7d4078d6901c" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LectorsSeminarsDataAccessLayerWCFService/LectorsSeminarsDataAccessLayerService/?xsd=xsd1" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="18d5f65f-7867-4421-af85-fa27ac6db163" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LectorsSeminarsDataAccessLayerWCFService/LectorsSeminarsDataAccessLayerService/?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

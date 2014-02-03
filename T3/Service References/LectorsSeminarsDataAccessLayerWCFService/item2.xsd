@@ -1,43 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/LectorsSeminarsDataAccessLayer" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LectorsSeminarsDataAccessLayer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="Lector">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:IdNamable">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Birthday" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="Seminars" nillable="true" type="tns:ArrayOfSeminar" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="Lector" nillable="true" type="tns:Lector" />
-  <xs:complexType name="IdNamable">
+<xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfint">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="int" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="IdNamable" nillable="true" type="tns:IdNamable" />
-  <xs:complexType name="ArrayOfSeminar">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Seminar" nillable="true" type="tns:Seminar" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfSeminar" nillable="true" type="tns:ArrayOfSeminar" />
-  <xs:complexType name="Seminar">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:IdNamable">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Lectors" nillable="true" type="tns:ArrayOfLector" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="Seminar" nillable="true" type="tns:Seminar" />
-  <xs:complexType name="ArrayOfLector">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Lector" nillable="true" type="tns:Lector" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfLector" nillable="true" type="tns:ArrayOfLector" />
+  <xs:element name="ArrayOfint" nillable="true" type="tns:ArrayOfint" />
 </xs:schema>

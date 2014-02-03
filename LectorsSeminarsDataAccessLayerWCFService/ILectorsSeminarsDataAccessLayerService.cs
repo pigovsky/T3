@@ -13,22 +13,46 @@ namespace LectorsSeminarsDataAccessLayerWCFService
     public interface ILectorsSeminarsDataAccessLayerService
     {
         [OperationContract]
-        Lector GetLectorById(string sessionKey, Int32 Id);
+        string GetLectorNameById(string sessionKey, Int32 Id);
 
         [OperationContract]
-        IList<Lector> GetAllLectors(string sessionKey);
+        IList<Int32> GetAllLectorIds(string sessionKey);
 
         [OperationContract]
-        Seminar GetSeminarById(string sessionKey, Int32 Id);
+        IList<Int32> GetAllLectorIdsFromSeminar(string sessionKey, Int32 seminarId);
 
         [OperationContract]
-        IList<Seminar> GetAllSeminars(string sessionKey);
+        IList<Int32> GetAllSeminarIdsFromLector(string sessionKey, Int32 lectorId);
 
         [OperationContract]
-        void SaveObject(string sessionKey, object obj);
+        string GetSeminarNameById(string sessionKey, Int32 Id);
 
         [OperationContract]
-        void DeleteObject(string sessionKey, object obj);
+        IList<Int32> GetAllSeminarIds(string sessionKey);
+
+        [OperationContract]
+        Int32 CreateSeminar(string sessionKey, string name);
+
+        [OperationContract]
+        Int32 CreateLector(string sessionKey, string name);
+
+        [OperationContract]
+        void AddSeminarToLector(string sessionKey, Int32 lectorId, Int32 seminarId);
+
+        [OperationContract]
+        void AddLectorToSeminar(string sessionKey, Int32 lectorId, Int32 seminarId);
+
+        [OperationContract]
+        void RemoveSeminarFromLector(string sessionKey, Int32 lectorId, Int32 seminarId);
+
+        [OperationContract]
+        void RemoveLectorFromSeminar(string sessionKey, Int32 lectorId, Int32 seminarId);
+
+        [OperationContract]
+        void DeleteSeminar(string sessionKey, Int32 Id);
+
+        [OperationContract]
+        void DeleteLector(string sessionKey, Int32 Id);
 
         [OperationContract]
         void CloseSession(string sessionKey);

@@ -9,184 +9,123 @@
 //------------------------------------------------------------------------------
 
 namespace T3.LectorsSeminarsDataAccessLayerWCFService {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="IdNamable", Namespace="http://schemas.datacontract.org/2004/07/LectorsSeminarsDataAccessLayer")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(T3.LectorsSeminarsDataAccessLayerWCFService.Seminar))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(T3.LectorsSeminarsDataAccessLayerWCFService.Lector))]
-    public partial class IdNamable : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Seminar", Namespace="http://schemas.datacontract.org/2004/07/LectorsSeminarsDataAccessLayer")]
-    [System.SerializableAttribute()]
-    public partial class Seminar : T3.LectorsSeminarsDataAccessLayerWCFService.IdNamable {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<T3.LectorsSeminarsDataAccessLayerWCFService.Lector> LectorsField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<T3.LectorsSeminarsDataAccessLayerWCFService.Lector> Lectors {
-            get {
-                return this.LectorsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LectorsField, value) != true)) {
-                    this.LectorsField = value;
-                    this.RaisePropertyChanged("Lectors");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Lector", Namespace="http://schemas.datacontract.org/2004/07/LectorsSeminarsDataAccessLayer")]
-    [System.SerializableAttribute()]
-    public partial class Lector : T3.LectorsSeminarsDataAccessLayerWCFService.IdNamable {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BirthdayField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<T3.LectorsSeminarsDataAccessLayerWCFService.Seminar> SeminarsField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Birthday {
-            get {
-                return this.BirthdayField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BirthdayField, value) != true)) {
-                    this.BirthdayField = value;
-                    this.RaisePropertyChanged("Birthday");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<T3.LectorsSeminarsDataAccessLayerWCFService.Seminar> Seminars {
-            get {
-                return this.SeminarsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SeminarsField, value) != true)) {
-                    this.SeminarsField = value;
-                    this.RaisePropertyChanged("Seminars");
-                }
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LectorsSeminarsDataAccessLayerWCFService.ILectorsSeminarsDataAccessLayerService")]
     public interface ILectorsSeminarsDataAccessLayerService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorById", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorByIdResponse")]
-        T3.LectorsSeminarsDataAccessLayerWCFService.Lector GetLectorById(string sessionKey, int Id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorNameById", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorNameByIdRespon" +
+            "se")]
+        string GetLectorNameById(string sessionKey, int Id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorById", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorByIdResponse")]
-        System.Threading.Tasks.Task<T3.LectorsSeminarsDataAccessLayerWCFService.Lector> GetLectorByIdAsync(string sessionKey, int Id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorNameById", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorNameByIdRespon" +
+            "se")]
+        System.Threading.Tasks.Task<string> GetLectorNameByIdAsync(string sessionKey, int Id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectors", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorsResponse")]
-        System.Collections.Generic.List<T3.LectorsSeminarsDataAccessLayerWCFService.Lector> GetAllLectors(string sessionKey);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorIds", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorIdsResponse" +
+            "")]
+        int[] GetAllLectorIds(string sessionKey);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectors", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorsResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<T3.LectorsSeminarsDataAccessLayerWCFService.Lector>> GetAllLectorsAsync(string sessionKey);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorIds", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorIdsResponse" +
+            "")]
+        System.Threading.Tasks.Task<int[]> GetAllLectorIdsAsync(string sessionKey);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetSeminarById", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetSeminarByIdResponse")]
-        T3.LectorsSeminarsDataAccessLayerWCFService.Seminar GetSeminarById(string sessionKey, int Id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorIdsFromSemi" +
+            "nar", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorIdsFromSemi" +
+            "narResponse")]
+        int[] GetAllLectorIdsFromSeminar(string sessionKey, int seminarId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetSeminarById", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetSeminarByIdResponse")]
-        System.Threading.Tasks.Task<T3.LectorsSeminarsDataAccessLayerWCFService.Seminar> GetSeminarByIdAsync(string sessionKey, int Id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorIdsFromSemi" +
+            "nar", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorIdsFromSemi" +
+            "narResponse")]
+        System.Threading.Tasks.Task<int[]> GetAllLectorIdsFromSeminarAsync(string sessionKey, int seminarId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminars", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminarsResponse")]
-        System.Collections.Generic.List<T3.LectorsSeminarsDataAccessLayerWCFService.Seminar> GetAllSeminars(string sessionKey);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminarIdsFromLec" +
+            "tor", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminarIdsFromLec" +
+            "torResponse")]
+        int[] GetAllSeminarIdsFromLector(string sessionKey, int lectorId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminars", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminarsResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<T3.LectorsSeminarsDataAccessLayerWCFService.Seminar>> GetAllSeminarsAsync(string sessionKey);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminarIdsFromLec" +
+            "tor", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminarIdsFromLec" +
+            "torResponse")]
+        System.Threading.Tasks.Task<int[]> GetAllSeminarIdsFromLectorAsync(string sessionKey, int lectorId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SaveObject", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SaveObjectResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(T3.LectorsSeminarsDataAccessLayerWCFService.Lector))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(T3.LectorsSeminarsDataAccessLayerWCFService.IdNamable))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<T3.LectorsSeminarsDataAccessLayerWCFService.Seminar>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(T3.LectorsSeminarsDataAccessLayerWCFService.Seminar))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<T3.LectorsSeminarsDataAccessLayerWCFService.Lector>))]
-        void SaveObject(string sessionKey, object obj);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetSeminarNameById", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetSeminarNameByIdRespo" +
+            "nse")]
+        string GetSeminarNameById(string sessionKey, int Id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SaveObject", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SaveObjectResponse")]
-        System.Threading.Tasks.Task SaveObjectAsync(string sessionKey, object obj);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetSeminarNameById", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetSeminarNameByIdRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<string> GetSeminarNameByIdAsync(string sessionKey, int Id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/DeleteObject", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/DeleteObjectResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(T3.LectorsSeminarsDataAccessLayerWCFService.Lector))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(T3.LectorsSeminarsDataAccessLayerWCFService.IdNamable))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<T3.LectorsSeminarsDataAccessLayerWCFService.Seminar>))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(T3.LectorsSeminarsDataAccessLayerWCFService.Seminar))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(System.Collections.Generic.List<T3.LectorsSeminarsDataAccessLayerWCFService.Lector>))]
-        void DeleteObject(string sessionKey, object obj);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminarIds", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminarIdsRespons" +
+            "e")]
+        int[] GetAllSeminarIds(string sessionKey);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/DeleteObject", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/DeleteObjectResponse")]
-        System.Threading.Tasks.Task DeleteObjectAsync(string sessionKey, object obj);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminarIds", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminarIdsRespons" +
+            "e")]
+        System.Threading.Tasks.Task<int[]> GetAllSeminarIdsAsync(string sessionKey);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CreateSeminar", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CreateSeminarResponse")]
+        int CreateSeminar(string sessionKey, string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CreateSeminar", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CreateSeminarResponse")]
+        System.Threading.Tasks.Task<int> CreateSeminarAsync(string sessionKey, string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CreateLector", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CreateLectorResponse")]
+        int CreateLector(string sessionKey, string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CreateLector", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CreateLectorResponse")]
+        System.Threading.Tasks.Task<int> CreateLectorAsync(string sessionKey, string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/AddSeminarToLector", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/AddSeminarToLectorRespo" +
+            "nse")]
+        void AddSeminarToLector(string sessionKey, int lectorId, int seminarId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/AddSeminarToLector", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/AddSeminarToLectorRespo" +
+            "nse")]
+        System.Threading.Tasks.Task AddSeminarToLectorAsync(string sessionKey, int lectorId, int seminarId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/AddLectorToSeminar", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/AddLectorToSeminarRespo" +
+            "nse")]
+        void AddLectorToSeminar(string sessionKey, int lectorId, int seminarId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/AddLectorToSeminar", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/AddLectorToSeminarRespo" +
+            "nse")]
+        System.Threading.Tasks.Task AddLectorToSeminarAsync(string sessionKey, int lectorId, int seminarId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/RemoveSeminarFromLector" +
+            "", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/RemoveSeminarFromLector" +
+            "Response")]
+        void RemoveSeminarFromLector(string sessionKey, int lectorId, int seminarId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/RemoveSeminarFromLector" +
+            "", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/RemoveSeminarFromLector" +
+            "Response")]
+        System.Threading.Tasks.Task RemoveSeminarFromLectorAsync(string sessionKey, int lectorId, int seminarId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/RemoveLectorFromSeminar" +
+            "", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/RemoveLectorFromSeminar" +
+            "Response")]
+        void RemoveLectorFromSeminar(string sessionKey, int lectorId, int seminarId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/RemoveLectorFromSeminar" +
+            "", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/RemoveLectorFromSeminar" +
+            "Response")]
+        System.Threading.Tasks.Task RemoveLectorFromSeminarAsync(string sessionKey, int lectorId, int seminarId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/DeleteSeminar", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/DeleteSeminarResponse")]
+        void DeleteSeminar(string sessionKey, int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/DeleteSeminar", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/DeleteSeminarResponse")]
+        System.Threading.Tasks.Task DeleteSeminarAsync(string sessionKey, int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/DeleteLector", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/DeleteLectorResponse")]
+        void DeleteLector(string sessionKey, int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/DeleteLector", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/DeleteLectorResponse")]
+        System.Threading.Tasks.Task DeleteLectorAsync(string sessionKey, int Id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CloseSession", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CloseSessionResponse")]
         void CloseSession(string sessionKey);
@@ -236,52 +175,116 @@ namespace T3.LectorsSeminarsDataAccessLayerWCFService {
                 base(binding, remoteAddress) {
         }
         
-        public T3.LectorsSeminarsDataAccessLayerWCFService.Lector GetLectorById(string sessionKey, int Id) {
-            return base.Channel.GetLectorById(sessionKey, Id);
+        public string GetLectorNameById(string sessionKey, int Id) {
+            return base.Channel.GetLectorNameById(sessionKey, Id);
         }
         
-        public System.Threading.Tasks.Task<T3.LectorsSeminarsDataAccessLayerWCFService.Lector> GetLectorByIdAsync(string sessionKey, int Id) {
-            return base.Channel.GetLectorByIdAsync(sessionKey, Id);
+        public System.Threading.Tasks.Task<string> GetLectorNameByIdAsync(string sessionKey, int Id) {
+            return base.Channel.GetLectorNameByIdAsync(sessionKey, Id);
         }
         
-        public System.Collections.Generic.List<T3.LectorsSeminarsDataAccessLayerWCFService.Lector> GetAllLectors(string sessionKey) {
-            return base.Channel.GetAllLectors(sessionKey);
+        public int[] GetAllLectorIds(string sessionKey) {
+            return base.Channel.GetAllLectorIds(sessionKey);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<T3.LectorsSeminarsDataAccessLayerWCFService.Lector>> GetAllLectorsAsync(string sessionKey) {
-            return base.Channel.GetAllLectorsAsync(sessionKey);
+        public System.Threading.Tasks.Task<int[]> GetAllLectorIdsAsync(string sessionKey) {
+            return base.Channel.GetAllLectorIdsAsync(sessionKey);
         }
         
-        public T3.LectorsSeminarsDataAccessLayerWCFService.Seminar GetSeminarById(string sessionKey, int Id) {
-            return base.Channel.GetSeminarById(sessionKey, Id);
+        public int[] GetAllLectorIdsFromSeminar(string sessionKey, int seminarId) {
+            return base.Channel.GetAllLectorIdsFromSeminar(sessionKey, seminarId);
         }
         
-        public System.Threading.Tasks.Task<T3.LectorsSeminarsDataAccessLayerWCFService.Seminar> GetSeminarByIdAsync(string sessionKey, int Id) {
-            return base.Channel.GetSeminarByIdAsync(sessionKey, Id);
+        public System.Threading.Tasks.Task<int[]> GetAllLectorIdsFromSeminarAsync(string sessionKey, int seminarId) {
+            return base.Channel.GetAllLectorIdsFromSeminarAsync(sessionKey, seminarId);
         }
         
-        public System.Collections.Generic.List<T3.LectorsSeminarsDataAccessLayerWCFService.Seminar> GetAllSeminars(string sessionKey) {
-            return base.Channel.GetAllSeminars(sessionKey);
+        public int[] GetAllSeminarIdsFromLector(string sessionKey, int lectorId) {
+            return base.Channel.GetAllSeminarIdsFromLector(sessionKey, lectorId);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<T3.LectorsSeminarsDataAccessLayerWCFService.Seminar>> GetAllSeminarsAsync(string sessionKey) {
-            return base.Channel.GetAllSeminarsAsync(sessionKey);
+        public System.Threading.Tasks.Task<int[]> GetAllSeminarIdsFromLectorAsync(string sessionKey, int lectorId) {
+            return base.Channel.GetAllSeminarIdsFromLectorAsync(sessionKey, lectorId);
         }
         
-        public void SaveObject(string sessionKey, object obj) {
-            base.Channel.SaveObject(sessionKey, obj);
+        public string GetSeminarNameById(string sessionKey, int Id) {
+            return base.Channel.GetSeminarNameById(sessionKey, Id);
         }
         
-        public System.Threading.Tasks.Task SaveObjectAsync(string sessionKey, object obj) {
-            return base.Channel.SaveObjectAsync(sessionKey, obj);
+        public System.Threading.Tasks.Task<string> GetSeminarNameByIdAsync(string sessionKey, int Id) {
+            return base.Channel.GetSeminarNameByIdAsync(sessionKey, Id);
         }
         
-        public void DeleteObject(string sessionKey, object obj) {
-            base.Channel.DeleteObject(sessionKey, obj);
+        public int[] GetAllSeminarIds(string sessionKey) {
+            return base.Channel.GetAllSeminarIds(sessionKey);
         }
         
-        public System.Threading.Tasks.Task DeleteObjectAsync(string sessionKey, object obj) {
-            return base.Channel.DeleteObjectAsync(sessionKey, obj);
+        public System.Threading.Tasks.Task<int[]> GetAllSeminarIdsAsync(string sessionKey) {
+            return base.Channel.GetAllSeminarIdsAsync(sessionKey);
+        }
+        
+        public int CreateSeminar(string sessionKey, string name) {
+            return base.Channel.CreateSeminar(sessionKey, name);
+        }
+        
+        public System.Threading.Tasks.Task<int> CreateSeminarAsync(string sessionKey, string name) {
+            return base.Channel.CreateSeminarAsync(sessionKey, name);
+        }
+        
+        public int CreateLector(string sessionKey, string name) {
+            return base.Channel.CreateLector(sessionKey, name);
+        }
+        
+        public System.Threading.Tasks.Task<int> CreateLectorAsync(string sessionKey, string name) {
+            return base.Channel.CreateLectorAsync(sessionKey, name);
+        }
+        
+        public void AddSeminarToLector(string sessionKey, int lectorId, int seminarId) {
+            base.Channel.AddSeminarToLector(sessionKey, lectorId, seminarId);
+        }
+        
+        public System.Threading.Tasks.Task AddSeminarToLectorAsync(string sessionKey, int lectorId, int seminarId) {
+            return base.Channel.AddSeminarToLectorAsync(sessionKey, lectorId, seminarId);
+        }
+        
+        public void AddLectorToSeminar(string sessionKey, int lectorId, int seminarId) {
+            base.Channel.AddLectorToSeminar(sessionKey, lectorId, seminarId);
+        }
+        
+        public System.Threading.Tasks.Task AddLectorToSeminarAsync(string sessionKey, int lectorId, int seminarId) {
+            return base.Channel.AddLectorToSeminarAsync(sessionKey, lectorId, seminarId);
+        }
+        
+        public void RemoveSeminarFromLector(string sessionKey, int lectorId, int seminarId) {
+            base.Channel.RemoveSeminarFromLector(sessionKey, lectorId, seminarId);
+        }
+        
+        public System.Threading.Tasks.Task RemoveSeminarFromLectorAsync(string sessionKey, int lectorId, int seminarId) {
+            return base.Channel.RemoveSeminarFromLectorAsync(sessionKey, lectorId, seminarId);
+        }
+        
+        public void RemoveLectorFromSeminar(string sessionKey, int lectorId, int seminarId) {
+            base.Channel.RemoveLectorFromSeminar(sessionKey, lectorId, seminarId);
+        }
+        
+        public System.Threading.Tasks.Task RemoveLectorFromSeminarAsync(string sessionKey, int lectorId, int seminarId) {
+            return base.Channel.RemoveLectorFromSeminarAsync(sessionKey, lectorId, seminarId);
+        }
+        
+        public void DeleteSeminar(string sessionKey, int Id) {
+            base.Channel.DeleteSeminar(sessionKey, Id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteSeminarAsync(string sessionKey, int Id) {
+            return base.Channel.DeleteSeminarAsync(sessionKey, Id);
+        }
+        
+        public void DeleteLector(string sessionKey, int Id) {
+            base.Channel.DeleteLector(sessionKey, Id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteLectorAsync(string sessionKey, int Id) {
+            return base.Channel.DeleteLectorAsync(sessionKey, Id);
         }
         
         public void CloseSession(string sessionKey) {

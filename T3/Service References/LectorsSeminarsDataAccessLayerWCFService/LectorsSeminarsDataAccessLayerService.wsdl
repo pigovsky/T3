@@ -4,44 +4,92 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/LectorsSeminarsDataAccessLayerWCFService/LectorsSeminarsDataAccessLayerService/?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/LectorsSeminarsDataAccessLayerWCFService/LectorsSeminarsDataAccessLayerService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/LectorsSeminarsDataAccessLayerWCFService/LectorsSeminarsDataAccessLayerService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/LectorsSeminarsDataAccessLayer" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/LectorsSeminarsDataAccessLayerWCFService/LectorsSeminarsDataAccessLayerService/?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetLectorById_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetLectorById" />
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetLectorNameById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLectorNameById" />
   </wsdl:message>
-  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetLectorById_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetLectorByIdResponse" />
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetLectorNameById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLectorNameByIdResponse" />
   </wsdl:message>
-  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetAllLectors_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllLectors" />
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetAllLectorIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLectorIds" />
   </wsdl:message>
-  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetAllLectors_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllLectorsResponse" />
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetAllLectorIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLectorIdsResponse" />
   </wsdl:message>
-  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetSeminarById_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetSeminarById" />
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetAllLectorIdsFromSeminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLectorIdsFromSeminar" />
   </wsdl:message>
-  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetSeminarById_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetSeminarByIdResponse" />
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetAllLectorIdsFromSeminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLectorIdsFromSeminarResponse" />
   </wsdl:message>
-  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetAllSeminars_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllSeminars" />
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetAllSeminarIdsFromLector_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSeminarIdsFromLector" />
   </wsdl:message>
-  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetAllSeminars_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAllSeminarsResponse" />
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetAllSeminarIdsFromLector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSeminarIdsFromLectorResponse" />
   </wsdl:message>
-  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_SaveObject_InputMessage">
-    <wsdl:part name="parameters" element="tns:SaveObject" />
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetSeminarNameById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeminarNameById" />
   </wsdl:message>
-  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_SaveObject_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SaveObjectResponse" />
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetSeminarNameById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSeminarNameByIdResponse" />
   </wsdl:message>
-  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_DeleteObject_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteObject" />
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetAllSeminarIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSeminarIds" />
   </wsdl:message>
-  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_DeleteObject_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteObjectResponse" />
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetAllSeminarIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSeminarIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_CreateSeminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSeminar" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_CreateSeminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSeminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_CreateLector_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLector" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_CreateLector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_AddSeminarToLector_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSeminarToLector" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_AddSeminarToLector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSeminarToLectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_AddLectorToSeminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLectorToSeminar" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_AddLectorToSeminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLectorToSeminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_RemoveSeminarFromLector_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveSeminarFromLector" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_RemoveSeminarFromLector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveSeminarFromLectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_RemoveLectorFromSeminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveLectorFromSeminar" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_RemoveLectorFromSeminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveLectorFromSeminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_DeleteSeminar_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSeminar" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_DeleteSeminar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSeminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_DeleteLector_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLector" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_DeleteLector_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLectorResponse" />
   </wsdl:message>
   <wsdl:message name="ILectorsSeminarsDataAccessLayerService_CloseSession_InputMessage">
     <wsdl:part name="parameters" element="tns:CloseSession" />
@@ -62,29 +110,61 @@
     <wsdl:part name="parameters" element="tns:GenerateSessionResponse" />
   </wsdl:message>
   <wsdl:portType name="ILectorsSeminarsDataAccessLayerService">
-    <wsdl:operation name="GetLectorById">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorById" message="tns:ILectorsSeminarsDataAccessLayerService_GetLectorById_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorByIdResponse" message="tns:ILectorsSeminarsDataAccessLayerService_GetLectorById_OutputMessage" />
+    <wsdl:operation name="GetLectorNameById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorNameById" message="tns:ILectorsSeminarsDataAccessLayerService_GetLectorNameById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorNameByIdResponse" message="tns:ILectorsSeminarsDataAccessLayerService_GetLectorNameById_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetAllLectors">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectors" message="tns:ILectorsSeminarsDataAccessLayerService_GetAllLectors_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorsResponse" message="tns:ILectorsSeminarsDataAccessLayerService_GetAllLectors_OutputMessage" />
+    <wsdl:operation name="GetAllLectorIds">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorIds" message="tns:ILectorsSeminarsDataAccessLayerService_GetAllLectorIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorIdsResponse" message="tns:ILectorsSeminarsDataAccessLayerService_GetAllLectorIds_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetSeminarById">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetSeminarById" message="tns:ILectorsSeminarsDataAccessLayerService_GetSeminarById_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetSeminarByIdResponse" message="tns:ILectorsSeminarsDataAccessLayerService_GetSeminarById_OutputMessage" />
+    <wsdl:operation name="GetAllLectorIdsFromSeminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorIdsFromSeminar" message="tns:ILectorsSeminarsDataAccessLayerService_GetAllLectorIdsFromSeminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorIdsFromSeminarResponse" message="tns:ILectorsSeminarsDataAccessLayerService_GetAllLectorIdsFromSeminar_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetAllSeminars">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminars" message="tns:ILectorsSeminarsDataAccessLayerService_GetAllSeminars_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminarsResponse" message="tns:ILectorsSeminarsDataAccessLayerService_GetAllSeminars_OutputMessage" />
+    <wsdl:operation name="GetAllSeminarIdsFromLector">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminarIdsFromLector" message="tns:ILectorsSeminarsDataAccessLayerService_GetAllSeminarIdsFromLector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminarIdsFromLectorResponse" message="tns:ILectorsSeminarsDataAccessLayerService_GetAllSeminarIdsFromLector_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="SaveObject">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SaveObject" message="tns:ILectorsSeminarsDataAccessLayerService_SaveObject_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SaveObjectResponse" message="tns:ILectorsSeminarsDataAccessLayerService_SaveObject_OutputMessage" />
+    <wsdl:operation name="GetSeminarNameById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetSeminarNameById" message="tns:ILectorsSeminarsDataAccessLayerService_GetSeminarNameById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetSeminarNameByIdResponse" message="tns:ILectorsSeminarsDataAccessLayerService_GetSeminarNameById_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="DeleteObject">
-      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/DeleteObject" message="tns:ILectorsSeminarsDataAccessLayerService_DeleteObject_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/DeleteObjectResponse" message="tns:ILectorsSeminarsDataAccessLayerService_DeleteObject_OutputMessage" />
+    <wsdl:operation name="GetAllSeminarIds">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminarIds" message="tns:ILectorsSeminarsDataAccessLayerService_GetAllSeminarIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminarIdsResponse" message="tns:ILectorsSeminarsDataAccessLayerService_GetAllSeminarIds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSeminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CreateSeminar" message="tns:ILectorsSeminarsDataAccessLayerService_CreateSeminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CreateSeminarResponse" message="tns:ILectorsSeminarsDataAccessLayerService_CreateSeminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLector">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CreateLector" message="tns:ILectorsSeminarsDataAccessLayerService_CreateLector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CreateLectorResponse" message="tns:ILectorsSeminarsDataAccessLayerService_CreateLector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSeminarToLector">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/AddSeminarToLector" message="tns:ILectorsSeminarsDataAccessLayerService_AddSeminarToLector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/AddSeminarToLectorResponse" message="tns:ILectorsSeminarsDataAccessLayerService_AddSeminarToLector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLectorToSeminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/AddLectorToSeminar" message="tns:ILectorsSeminarsDataAccessLayerService_AddLectorToSeminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/AddLectorToSeminarResponse" message="tns:ILectorsSeminarsDataAccessLayerService_AddLectorToSeminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSeminarFromLector">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/RemoveSeminarFromLector" message="tns:ILectorsSeminarsDataAccessLayerService_RemoveSeminarFromLector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/RemoveSeminarFromLectorResponse" message="tns:ILectorsSeminarsDataAccessLayerService_RemoveSeminarFromLector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLectorFromSeminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/RemoveLectorFromSeminar" message="tns:ILectorsSeminarsDataAccessLayerService_RemoveLectorFromSeminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/RemoveLectorFromSeminarResponse" message="tns:ILectorsSeminarsDataAccessLayerService_RemoveLectorFromSeminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSeminar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/DeleteSeminar" message="tns:ILectorsSeminarsDataAccessLayerService_DeleteSeminar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/DeleteSeminarResponse" message="tns:ILectorsSeminarsDataAccessLayerService_DeleteSeminar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLector">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/DeleteLector" message="tns:ILectorsSeminarsDataAccessLayerService_DeleteLector_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/DeleteLectorResponse" message="tns:ILectorsSeminarsDataAccessLayerService_DeleteLector_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CloseSession">
       <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CloseSession" message="tns:ILectorsSeminarsDataAccessLayerService_CloseSession_InputMessage" />
@@ -101,8 +181,8 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ILectorsSeminarsDataAccessLayerService" type="tns:ILectorsSeminarsDataAccessLayerService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetLectorById">
-      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorById" style="document" />
+    <wsdl:operation name="GetLectorNameById">
+      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorNameById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -110,8 +190,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAllLectors">
-      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectors" style="document" />
+    <wsdl:operation name="GetAllLectorIds">
+      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorIds" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -119,8 +199,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetSeminarById">
-      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetSeminarById" style="document" />
+    <wsdl:operation name="GetAllLectorIdsFromSeminar">
+      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorIdsFromSeminar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -128,8 +208,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAllSeminars">
-      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminars" style="document" />
+    <wsdl:operation name="GetAllSeminarIdsFromLector">
+      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminarIdsFromLector" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -137,8 +217,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SaveObject">
-      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SaveObject" style="document" />
+    <wsdl:operation name="GetSeminarNameById">
+      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetSeminarNameById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -146,8 +226,80 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="DeleteObject">
-      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/DeleteObject" style="document" />
+    <wsdl:operation name="GetAllSeminarIds">
+      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminarIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSeminar">
+      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CreateSeminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLector">
+      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CreateLector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSeminarToLector">
+      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/AddSeminarToLector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLectorToSeminar">
+      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/AddLectorToSeminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSeminarFromLector">
+      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/RemoveSeminarFromLector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLectorFromSeminar">
+      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/RemoveLectorFromSeminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSeminar">
+      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/DeleteSeminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLector">
+      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/DeleteLector" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses/LectorsSeminarsDataAccessLayerWCFService/LectorsSeminarsDataAccessLayerService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/LectorsSeminarsDataAccessLayer" />
-  <xs:element name="GetLectorById">
+  <xs:import schemaLocation="http://localhost:8733/Design_Time_Addresses/LectorsSeminarsDataAccessLayerWCFService/LectorsSeminarsDataAccessLayerService/?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetLectorNameById">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="sessionKey" nillable="true" type="xs:string" />
@@ -9,28 +9,58 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetLectorByIdResponse">
+  <xs:element name="GetLectorNameByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/LectorsSeminarsDataAccessLayer" minOccurs="0" name="GetLectorByIdResult" nillable="true" type="q1:Lector" />
+        <xs:element minOccurs="0" name="GetLectorNameByIdResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetAllLectors">
+  <xs:element name="GetAllLectorIds">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="sessionKey" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetAllLectorsResponse">
+  <xs:element name="GetAllLectorIdsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/LectorsSeminarsDataAccessLayer" minOccurs="0" name="GetAllLectorsResult" nillable="true" type="q2:ArrayOfLector" />
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAllLectorIdsResult" nillable="true" type="q1:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetSeminarById">
+  <xs:element name="GetAllLectorIdsFromSeminar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="seminarId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllLectorIdsFromSeminarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAllLectorIdsFromSeminarResult" nillable="true" type="q2:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllSeminarIdsFromLector">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lectorId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllSeminarIdsFromLectorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAllSeminarIdsFromLectorResult" nillable="true" type="q3:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSeminarNameById">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="sessionKey" nillable="true" type="xs:string" />
@@ -38,49 +68,135 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetSeminarByIdResponse">
+  <xs:element name="GetSeminarNameByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/LectorsSeminarsDataAccessLayer" minOccurs="0" name="GetSeminarByIdResult" nillable="true" type="q3:Seminar" />
+        <xs:element minOccurs="0" name="GetSeminarNameByIdResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetAllSeminars">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="sessionKey" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetAllSeminarsResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/LectorsSeminarsDataAccessLayer" minOccurs="0" name="GetAllSeminarsResult" nillable="true" type="q4:ArrayOfSeminar" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="SaveObject">
+  <xs:element name="GetAllSeminarIds">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="sessionKey" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="obj" nillable="true" type="xs:anyType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SaveObjectResponse">
+  <xs:element name="GetAllSeminarIdsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAllSeminarIdsResult" nillable="true" type="q4:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSeminar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateSeminarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateSeminarResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLector">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLectorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateLectorResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSeminarToLector">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lectorId" type="xs:int" />
+        <xs:element minOccurs="0" name="seminarId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSeminarToLectorResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="DeleteObject">
+  <xs:element name="AddLectorToSeminar">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="sessionKey" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="obj" nillable="true" type="xs:anyType" />
+        <xs:element minOccurs="0" name="lectorId" type="xs:int" />
+        <xs:element minOccurs="0" name="seminarId" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="DeleteObjectResponse">
+  <xs:element name="AddLectorToSeminarResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveSeminarFromLector">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lectorId" type="xs:int" />
+        <xs:element minOccurs="0" name="seminarId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveSeminarFromLectorResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveLectorFromSeminar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lectorId" type="xs:int" />
+        <xs:element minOccurs="0" name="seminarId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveLectorFromSeminarResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSeminar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSeminarResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLector">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLectorResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

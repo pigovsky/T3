@@ -33,10 +33,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newSeminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newLecturerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.lectorsListBox = new System.Windows.Forms.ListBox();
             this.previewPaneWebBrowser = new System.Windows.Forms.WebBrowser();
-            this.newLecturerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -107,6 +107,13 @@
             this.newSeminarToolStripMenuItem.Text = "New Seminar...";
             this.newSeminarToolStripMenuItem.Click += new System.EventHandler(this.newSeminarToolStripMenuItem_Click);
             // 
+            // newLecturerToolStripMenuItem
+            // 
+            this.newLecturerToolStripMenuItem.Name = "newLecturerToolStripMenuItem";
+            this.newLecturerToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.newLecturerToolStripMenuItem.Text = "New Lecturer...";
+            this.newLecturerToolStripMenuItem.Click += new System.EventHandler(this.newLecturerToolStripMenuItem_Click);
+            // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -136,7 +143,9 @@
             this.lectorsListBox.TabIndex = 0;
             this.lectorsListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.lectorsListBox_DragDrop);
             this.lectorsListBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.lectorsListBox_DragEnter);
+            this.lectorsListBox.DoubleClick += new System.EventHandler(this.lectorsListBox_DoubleClick);
             this.lectorsListBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lectorsListBox_MouseDown);
+            this.lectorsListBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lectorsListBox_MouseMove);
             // 
             // previewPaneWebBrowser
             // 
@@ -146,13 +155,6 @@
             this.previewPaneWebBrowser.Name = "previewPaneWebBrowser";
             this.previewPaneWebBrowser.Size = new System.Drawing.Size(377, 268);
             this.previewPaneWebBrowser.TabIndex = 0;
-            // 
-            // newLecturerToolStripMenuItem
-            // 
-            this.newLecturerToolStripMenuItem.Name = "newLecturerToolStripMenuItem";
-            this.newLecturerToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.newLecturerToolStripMenuItem.Text = "New Lecturer...";
-            this.newLecturerToolStripMenuItem.Click += new System.EventHandler(this.newLecturerToolStripMenuItem_Click);
             // 
             // MainWindow
             // 

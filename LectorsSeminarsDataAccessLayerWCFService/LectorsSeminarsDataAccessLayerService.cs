@@ -1,8 +1,10 @@
 ﻿using LectorsSeminarsDataAccessLayer;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Security.Cryptography;
 using System.ServiceModel;
 using System.Text;
 using System.Windows.Forms;
@@ -22,7 +24,7 @@ namespace LectorsSeminarsDataAccessLayerWCFService
         }
 
         private SessionWraperFactory sessionWraperFactory = 
-            new SessionWraperFactory(false);
+            new SessionWraperFactory(true);
 
         static volatile private Dictionary<string, ISessionWraper> sessions = 
             new Dictionary<string, ISessionWraper>();
@@ -88,6 +90,8 @@ namespace LectorsSeminarsDataAccessLayerWCFService
             sessions[sessionKey].ObjectToSave = lector;
             return lector.Id;
         }
+
+        
 
         public void DeleteSeminar(string sessionKey, Int32 id)
         {
@@ -175,6 +179,31 @@ namespace LectorsSeminarsDataAccessLayerWCFService
             var session = sessions[sessionKey];
             var lector = session.GetLectorById(lectorId);
             return GetIds(lector.Seminars);
+        }
+
+        
+
+        public void SetLectorPhotoData(string sessionKey, int id, string data)
+        {            
+            var session = sessions[sessionKey];
+            var lector = session.GetLectorById(id);
+            lector.SetPhotoData(data);
+            session.ObjectToSave = lector;
+        }
+
+        public string GetLectorPhotoData(string sessionKey, int id)
+        {
+            var session = sessions[sessionKey];
+            var lector = session.GetLectorById(id);
+            return lector.GetPhotoData();
+        }
+
+
+        public string GetLectorPhotoName(string sessionKey, int id)
+        {
+            var session = sessions[sessionKey];
+            var lector = session.GetLectorById(id);
+            return lector.Photo;
         }
     }
 }

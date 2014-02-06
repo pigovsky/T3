@@ -79,6 +79,30 @@ namespace T3.LectorsSeminarsDataAccessLayerWCFService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CreateLector", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CreateLectorResponse")]
         System.Threading.Tasks.Task<int> CreateLectorAsync(string sessionKey, string name);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetLectorPhotoData", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetLectorPhotoDataRespo" +
+            "nse")]
+        void SetLectorPhotoData(string sessionKey, int id, string data);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetLectorPhotoData", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetLectorPhotoDataRespo" +
+            "nse")]
+        System.Threading.Tasks.Task SetLectorPhotoDataAsync(string sessionKey, int id, string data);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorPhotoData", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorPhotoDataRespo" +
+            "nse")]
+        string GetLectorPhotoData(string sessionKey, int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorPhotoData", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorPhotoDataRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<string> GetLectorPhotoDataAsync(string sessionKey, int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorPhotoName", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorPhotoNameRespo" +
+            "nse")]
+        string GetLectorPhotoName(string sessionKey, int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorPhotoName", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorPhotoNameRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<string> GetLectorPhotoNameAsync(string sessionKey, int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/AddSeminarToLector", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/AddSeminarToLectorRespo" +
             "nse")]
         void AddSeminarToLector(string sessionKey, int lectorId, int seminarId);
@@ -237,6 +261,30 @@ namespace T3.LectorsSeminarsDataAccessLayerWCFService {
         
         public System.Threading.Tasks.Task<int> CreateLectorAsync(string sessionKey, string name) {
             return base.Channel.CreateLectorAsync(sessionKey, name);
+        }
+        
+        public void SetLectorPhotoData(string sessionKey, int id, string data) {
+            base.Channel.SetLectorPhotoData(sessionKey, id, data);
+        }
+        
+        public System.Threading.Tasks.Task SetLectorPhotoDataAsync(string sessionKey, int id, string data) {
+            return base.Channel.SetLectorPhotoDataAsync(sessionKey, id, data);
+        }
+        
+        public string GetLectorPhotoData(string sessionKey, int id) {
+            return base.Channel.GetLectorPhotoData(sessionKey, id);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetLectorPhotoDataAsync(string sessionKey, int id) {
+            return base.Channel.GetLectorPhotoDataAsync(sessionKey, id);
+        }
+        
+        public string GetLectorPhotoName(string sessionKey, int id) {
+            return base.Channel.GetLectorPhotoName(sessionKey, id);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetLectorPhotoNameAsync(string sessionKey, int id) {
+            return base.Channel.GetLectorPhotoNameAsync(sessionKey, id);
         }
         
         public void AddSeminarToLector(string sessionKey, int lectorId, int seminarId) {

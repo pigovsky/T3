@@ -24,7 +24,7 @@ namespace T3
         public MainWindow()
         {
             InitializeComponent();
-            MessageBox.Show(wcfClient.DoWork("yp"));
+            //MessageBox.Show(wcfClient.DoWork("yp"));
             //wcfClient.Close();
 
             client =  new SessionWraperFromWCF(wcfClient);
@@ -84,15 +84,15 @@ namespace T3
             if (!(seminarNode.Tag is Seminar))
                 return;
             var seminar = seminarNode.Tag as Seminar;
+            
+
+            //var count = lectorsListBox.Items.Count;
+
             lectorsListBox.Items.Clear();
-
-            var count = lectorsListBox.Items.Count;
-
             foreach (var lector in seminar.Lectors)
-            {
-                var name = lector.Name;
-                if (name!=null)
-                    lectorsListBox.Items.Add(lector.Name);
+            {                
+                if (lector.Name!=null)
+                    lectorsListBox.Items.Add(lector);
             }
 
             lectorsListBox.Tag = seminar;
@@ -163,19 +163,20 @@ namespace T3
 
         private void CreateNewLector()
         {
-            EditSeminar editSeminar = new EditSeminar();
-            editSeminar.ShowDialog();
+            EditLectorDialog editLector = new EditLectorDialog();
+            editLector.ShowDialog();
 
-            if (editSeminar.SeminarName != null)
+            if (editLector.LectorName != null)
             {                
-                client.CreateLector(editSeminar.SeminarName);
+                var lector = client.CreateLector(editLector.LectorName);
+                lector.LectorPhotoData = editLector.PhotoData;
                 RecreateSeminarsTree();
             }
         }
 
         private void CreateNewSeminar()
         {
-            EditSeminar editSeminar = new EditSeminar();
+            EditSeminarDialog editSeminar = new EditSeminarDialog();
             editSeminar.ShowDialog();
 
             if (editSeminar.SeminarName != null)
@@ -185,13 +186,7 @@ namespace T3
             }
         }
 
-        private void lectorsListBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            var lector = lectorsListBox.SelectedItem as Lector;
-            if (lector == null)
-                return;
-            DoDragDrop(lector.Id, DragDropEffects.Copy | DragDropEffects.Move);
-        }
+        
 
         private void lectorsListBox_DragDrop(object sender, DragEventArgs e)
         {
@@ -249,6 +244,39 @@ namespace T3
         private void newLecturerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateNewLector();
+        }
+
+        private void lectorsListBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != System.Windows.Forms.MouseButtons.Left
+                || (Math.Abs(e.X-whereMouseWasDown.X) +
+                    Math.Abs(e.Y-whereMouseWasDown.Y)<5) )
+                return;
+            var lector = lectorsListBox.SelectedItem as Lector;
+            if (lector == null)
+                return;
+            DoDragDrop(lector.Id, DragDropEffects.Copy | DragDropEffects.Move);
+        }
+
+        private void lectorsListBox_DoubleClick(object sender, EventArgs e)
+        {
+            var lector = lectorsListBox.SelectedItem as Lector;
+            if (lector == null)
+                return;
+
+            EditLectorDialog editLector = new EditLectorDialog(lector);
+            editLector.ShowDialog();   
+                        
+            lector.LectorPhotoData = editLector.PhotoData;
+
+            RecreateSeminarsTree();            
+        }
+
+        Point whereMouseWasDown;
+
+        private void lectorsListBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            whereMouseWasDown = e.Location;
         }
     }
 }

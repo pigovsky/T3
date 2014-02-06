@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace T3
 {
-    class Seminar : IdName
+    public class Seminar : IdName
     {
         private SessionWraperFromWCF sessionWraperFromWCF;
 

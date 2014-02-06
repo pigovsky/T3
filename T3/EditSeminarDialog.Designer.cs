@@ -1,6 +1,6 @@
 ﻿namespace T3
 {
-    partial class EditSeminar
+    partial class EditSeminarDialog
     {
         /// <summary>
         /// Required designer variable.

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace T3
 {
-    class IdName
+    public class IdName
     {
         public Int32 Id { get; set; }
         public string Name

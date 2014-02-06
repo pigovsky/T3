@@ -8,7 +8,7 @@ using T3.LectorsSeminarsDataAccessLayerWCFService;
 
 namespace T3
 {
-    class SessionWraperFromWCF
+    public class SessionWraperFromWCF
     {
         private string key;
         LectorsSeminarsDataAccessLayerServiceClient client;
@@ -99,6 +99,22 @@ namespace T3
         {
             var id = client.CreateSeminar(key, name);
             return new Seminar(this) { Id = id };
+        }
+
+        public string GetLectorPhotoName(Lector lector)
+        {
+            return client.GetLectorPhotoName(key, lector.Id);
+        }
+
+
+        public void SetLectorPhotoData(Lector lector, string data)
+        {
+            client.SetLectorPhotoData(key, lector.Id, data);
+        }
+
+        public string GetLectorPhotoData(Lector lector)
+        {
+            return client.GetLectorPhotoData(key, lector.Id);
         }
 
         public void DeleteSeminar(Seminar seminar)

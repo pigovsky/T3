@@ -55,6 +55,24 @@
   <wsdl:message name="ILectorsSeminarsDataAccessLayerService_CreateLector_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateLectorResponse" />
   </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_SetLectorPhotoData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetLectorPhotoData" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_SetLectorPhotoData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetLectorPhotoDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetLectorPhotoData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLectorPhotoData" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetLectorPhotoData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLectorPhotoDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetLectorPhotoName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLectorPhotoName" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetLectorPhotoName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLectorPhotoNameResponse" />
+  </wsdl:message>
   <wsdl:message name="ILectorsSeminarsDataAccessLayerService_AddSeminarToLector_InputMessage">
     <wsdl:part name="parameters" element="tns:AddSeminarToLector" />
   </wsdl:message>
@@ -141,6 +159,18 @@
     <wsdl:operation name="CreateLector">
       <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CreateLector" message="tns:ILectorsSeminarsDataAccessLayerService_CreateLector_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CreateLectorResponse" message="tns:ILectorsSeminarsDataAccessLayerService_CreateLector_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetLectorPhotoData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetLectorPhotoData" message="tns:ILectorsSeminarsDataAccessLayerService_SetLectorPhotoData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetLectorPhotoDataResponse" message="tns:ILectorsSeminarsDataAccessLayerService_SetLectorPhotoData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLectorPhotoData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorPhotoData" message="tns:ILectorsSeminarsDataAccessLayerService_GetLectorPhotoData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorPhotoDataResponse" message="tns:ILectorsSeminarsDataAccessLayerService_GetLectorPhotoData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLectorPhotoName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorPhotoName" message="tns:ILectorsSeminarsDataAccessLayerService_GetLectorPhotoName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorPhotoNameResponse" message="tns:ILectorsSeminarsDataAccessLayerService_GetLectorPhotoName_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddSeminarToLector">
       <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/AddSeminarToLector" message="tns:ILectorsSeminarsDataAccessLayerService_AddSeminarToLector_InputMessage" />
@@ -246,6 +276,33 @@
     </wsdl:operation>
     <wsdl:operation name="CreateLector">
       <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/CreateLector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetLectorPhotoData">
+      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetLectorPhotoData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLectorPhotoData">
+      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorPhotoData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLectorPhotoName">
+      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorPhotoName" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

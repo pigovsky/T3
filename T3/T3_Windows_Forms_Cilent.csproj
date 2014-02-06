@@ -49,11 +49,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EditSeminar.cs">
+    <Compile Include="EditLectorDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditSeminar.Designer.cs">
-      <DependentUpon>EditSeminar.cs</DependentUpon>
+    <Compile Include="EditLectorDialog.Designer.cs">
+      <DependentUpon>EditLectorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditSeminarDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditSeminarDialog.Designer.cs">
+      <DependentUpon>EditSeminarDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="IdName.cs" />
     <Compile Include="Lector.cs" />
@@ -72,8 +78,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="SessionWraperFromWCF.cs" />
-    <EmbeddedResource Include="EditSeminar.resx">
-      <DependentUpon>EditSeminar.cs</DependentUpon>
+    <EmbeddedResource Include="EditLectorDialog.resx">
+      <DependentUpon>EditLectorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditSeminarDialog.resx">
+      <DependentUpon>EditSeminarDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

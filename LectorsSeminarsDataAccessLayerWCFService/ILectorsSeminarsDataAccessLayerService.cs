@@ -37,6 +37,15 @@ namespace LectorsSeminarsDataAccessLayerWCFService
         Int32 CreateLector(string sessionKey, string name);
 
         [OperationContract]
+        void SetLectorPhotoData(string sessionKey, Int32 id, string data);
+
+        [OperationContract]
+        string GetLectorPhotoData(string sessionKey, Int32 id);
+
+        [OperationContract]
+        string GetLectorPhotoName(string sessionKey, Int32 id);
+
+        [OperationContract]
         void AddSeminarToLector(string sessionKey, Int32 lectorId, Int32 seminarId);
 
         [OperationContract]

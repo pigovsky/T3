@@ -6,6 +6,7 @@
         type="Int32" unsaved-value="0"></id>
     <property name="Name" column="lector_name" type="string"></property>
     <property name="Birthday" column="lector_birthday" type="DateTime"></property>
+    <property name="Photo" column="lector_photo" type="string"></property>
     <idbag name="Seminars" table="qualref">
       <collection-id column="id" type="Int32">
         <generator  class="native"></generator>

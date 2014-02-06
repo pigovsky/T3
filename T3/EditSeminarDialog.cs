@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace T3
 {
-    public partial class EditSeminar : Form
+    public partial class EditSeminarDialog : Form
     {
         private string _SeminarName;
         public string SeminarName { 
             get { return _SeminarName; } 
         }
 
-        public EditSeminar()
+        public EditSeminarDialog()
         {
             InitializeComponent();
         }

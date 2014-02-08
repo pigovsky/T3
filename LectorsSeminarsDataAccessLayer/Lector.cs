@@ -14,7 +14,7 @@ namespace LectorsSeminarsDataAccessLayer
     public class Lector : IdNamable
     {       
         [DataMember]
-        public virtual string Birthday { get; set; }
+        public virtual DateTime Birthday { get; set; }
 
         [DataMember]
         public virtual IList<Seminar> Seminars { get; set; }

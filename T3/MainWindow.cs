@@ -36,7 +36,7 @@ namespace T3
         }
 
         private void RecreateSeminarsTree()
-        {
+        {            
             var allLectorsNode = new TreeNode("All") {                 
                 Tag = new Seminar(null) { Lectors = client.AllLectors } 
             };
@@ -57,6 +57,7 @@ namespace T3
                 if (seminar.Lectors.Count > 0)
                     seminarNode.Nodes.Add("stub");
             }
+            lectorsListBox.Items.Clear();
         }
 
         private void seminarsAndLectorsTreeView_BeforeExpand(object sender, TreeViewCancelEventArgs e)
@@ -164,13 +165,11 @@ namespace T3
 
         private void CreateNewLector()
         {
-            EditLectorDialog editLector = new EditLectorDialog();
+            EditLectorDialog editLector = new EditLectorDialog(client);
             editLector.ShowDialog();
 
-            if (editLector.LectorName != null)
-            {                
-                var lector = client.CreateLector(editLector.LectorName);
-                lector.LectorPhotoData = editLector.PhotoData;
+            if (editLector.lector != null)
+            {                                                
                 RecreateSeminarsTree();
             }
         }
@@ -265,10 +264,8 @@ namespace T3
             if (lector == null)
                 return;
 
-            EditLectorDialog editLector = new EditLectorDialog(lector);
-            editLector.ShowDialog();   
-                        
-            lector.LectorPhotoData = editLector.PhotoData;
+            EditLectorDialog editLector = new EditLectorDialog(client, lector);
+            editLector.ShowDialog();                                       
 
             RecreateSeminarsTree();            
         }
@@ -278,6 +275,20 @@ namespace T3
         private void lectorsListBox_MouseDown(object sender, MouseEventArgs e)
         {
             whereMouseWasDown = e.Location;
+        }
+
+        private void lectorsListBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Lector lector = lectorsListBox.SelectedItem as Lector;
+
+                previewPaneWebBrowser.Url = new Uri("file://" + Environment.CurrentDirectory +"/" + Lector.img + lector.LectorPhotoName);
+            }
+            catch (Exception err)
+            {
+
+            }
         }
     }
 }

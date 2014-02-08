@@ -16,6 +16,15 @@ namespace LectorsSeminarsDataAccessLayerWCFService
         string GetLectorNameById(string sessionKey, Int32 Id);
 
         [OperationContract]
+        void SetLectorNameById(string sessionKey, Int32 Id, string Name);
+
+        [OperationContract]
+        string GetLectorBirthdayById(string sessionKey, Int32 Id);
+
+        [OperationContract]
+        void SetLectorBirthdayById(string sessionKey, Int32 Id, string Birthday);
+
+        [OperationContract]
         IList<Int32> GetAllLectorIds(string sessionKey);
 
         [OperationContract]
@@ -26,6 +35,9 @@ namespace LectorsSeminarsDataAccessLayerWCFService
 
         [OperationContract]
         string GetSeminarNameById(string sessionKey, Int32 Id);
+
+        [OperationContract]
+        void SetSeminarNameById(string sessionKey, Int32 Id, string Name);
 
         [OperationContract]
         IList<Int32> GetAllSeminarIds(string sessionKey);

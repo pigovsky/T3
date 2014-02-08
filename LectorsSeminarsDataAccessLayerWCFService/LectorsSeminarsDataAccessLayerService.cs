@@ -205,5 +205,37 @@ namespace LectorsSeminarsDataAccessLayerWCFService
             var lector = session.GetLectorById(id);
             return lector.Photo;
         }
+
+
+        public void SetLectorNameById(string sessionKey, int Id, string Name)
+        {
+            var session = sessions[sessionKey];
+            var lector = session.GetLectorById(Id);
+            lector.Name = Name;
+            session.ObjectToSave = lector;
+        }
+
+        public string GetLectorBirthdayById(string sessionKey, int Id)
+        {
+            var session = sessions[sessionKey];
+            var lector = session.GetLectorById(Id);
+            return lector.Birthday.ToString("yyyy-MM-dd");
+        }
+
+        public void SetLectorBirthdayById(string sessionKey, int Id, string Birthday)
+        {
+            var session = sessions[sessionKey];
+            var lector = session.GetLectorById(Id);
+            lector.Birthday = DateTime.Parse(Birthday);
+            session.ObjectToSave = lector;
+        }
+
+        public void SetSeminarNameById(string sessionKey, int Id, string Name)
+        {
+            var session = sessions[sessionKey];
+            var seminar = session.GetSeminarById(Id);
+            seminar.Name = Name;
+            session.ObjectToSave = seminar;
+        }
     }
 }

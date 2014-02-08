@@ -16,6 +16,49 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="SetLectorNameById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Id" type="xs:int" />
+        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetLectorNameByIdResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLectorBirthdayById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLectorBirthdayByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLectorBirthdayByIdResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetLectorBirthdayById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Id" type="xs:int" />
+        <xs:element minOccurs="0" name="Birthday" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetLectorBirthdayByIdResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetAllLectorIds">
     <xs:complexType>
       <xs:sequence>
@@ -73,6 +116,20 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="GetSeminarNameByIdResult" nillable="true" type="xs:string" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSeminarNameById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sessionKey" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Id" type="xs:int" />
+        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetSeminarNameByIdResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="GetAllSeminarIds">

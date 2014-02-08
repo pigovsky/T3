@@ -141,6 +141,7 @@
             this.lectorsListBox.Name = "lectorsListBox";
             this.lectorsListBox.Size = new System.Drawing.Size(377, 82);
             this.lectorsListBox.TabIndex = 0;
+            this.lectorsListBox.SelectedValueChanged += new System.EventHandler(this.lectorsListBox_SelectedValueChanged);
             this.lectorsListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.lectorsListBox_DragDrop);
             this.lectorsListBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.lectorsListBox_DragEnter);
             this.lectorsListBox.DoubleClick += new System.EventHandler(this.lectorsListBox_DoubleClick);

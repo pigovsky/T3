@@ -13,6 +13,24 @@
   <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetLectorNameById_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetLectorNameByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_SetLectorNameById_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetLectorNameById" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_SetLectorNameById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetLectorNameByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetLectorBirthdayById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLectorBirthdayById" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetLectorBirthdayById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLectorBirthdayByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_SetLectorBirthdayById_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetLectorBirthdayById" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_SetLectorBirthdayById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetLectorBirthdayByIdResponse" />
+  </wsdl:message>
   <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetAllLectorIds_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllLectorIds" />
   </wsdl:message>
@@ -36,6 +54,12 @@
   </wsdl:message>
   <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetSeminarNameById_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSeminarNameByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_SetSeminarNameById_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetSeminarNameById" />
+  </wsdl:message>
+  <wsdl:message name="ILectorsSeminarsDataAccessLayerService_SetSeminarNameById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetSeminarNameByIdResponse" />
   </wsdl:message>
   <wsdl:message name="ILectorsSeminarsDataAccessLayerService_GetAllSeminarIds_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllSeminarIds" />
@@ -132,6 +156,18 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorNameById" message="tns:ILectorsSeminarsDataAccessLayerService_GetLectorNameById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorNameByIdResponse" message="tns:ILectorsSeminarsDataAccessLayerService_GetLectorNameById_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="SetLectorNameById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetLectorNameById" message="tns:ILectorsSeminarsDataAccessLayerService_SetLectorNameById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetLectorNameByIdResponse" message="tns:ILectorsSeminarsDataAccessLayerService_SetLectorNameById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLectorBirthdayById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorBirthdayById" message="tns:ILectorsSeminarsDataAccessLayerService_GetLectorBirthdayById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorBirthdayByIdResponse" message="tns:ILectorsSeminarsDataAccessLayerService_GetLectorBirthdayById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetLectorBirthdayById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetLectorBirthdayById" message="tns:ILectorsSeminarsDataAccessLayerService_SetLectorBirthdayById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetLectorBirthdayByIdResponse" message="tns:ILectorsSeminarsDataAccessLayerService_SetLectorBirthdayById_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetAllLectorIds">
       <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorIds" message="tns:ILectorsSeminarsDataAccessLayerService_GetAllLectorIds_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorIdsResponse" message="tns:ILectorsSeminarsDataAccessLayerService_GetAllLectorIds_OutputMessage" />
@@ -147,6 +183,10 @@
     <wsdl:operation name="GetSeminarNameById">
       <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetSeminarNameById" message="tns:ILectorsSeminarsDataAccessLayerService_GetSeminarNameById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetSeminarNameByIdResponse" message="tns:ILectorsSeminarsDataAccessLayerService_GetSeminarNameById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSeminarNameById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetSeminarNameById" message="tns:ILectorsSeminarsDataAccessLayerService_SetSeminarNameById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetSeminarNameByIdResponse" message="tns:ILectorsSeminarsDataAccessLayerService_SetSeminarNameById_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllSeminarIds">
       <wsdl:input wsaw:Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminarIds" message="tns:ILectorsSeminarsDataAccessLayerService_GetAllSeminarIds_InputMessage" />
@@ -220,6 +260,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SetLectorNameById">
+      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetLectorNameById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLectorBirthdayById">
+      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorBirthdayById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetLectorBirthdayById">
+      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetLectorBirthdayById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetAllLectorIds">
       <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorIds" style="document" />
       <wsdl:input>
@@ -249,6 +316,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetSeminarNameById">
       <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetSeminarNameById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSeminarNameById">
+      <soap:operation soapAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetSeminarNameById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -20,14 +20,34 @@ namespace LectorsSeminarsWCFClientLayer
             this.key = client.GenerateSession();
         }
 
-        public string GetLectorNameById(Int32 Id)
+        public string GetLectorName(Lector lector)
         {
-            return client.GetLectorNameById(key, Id);
+            return client.GetLectorNameById(key, lector.Id);
         }
 
-        public string GetSeminarNameById(Int32 Id)
+        public void SetLectorName(Lector lector, string Name)
         {
-            return client.GetSeminarNameById(key, Id);
+            client.SetLectorNameById(key, lector.Id, Name);
+        }
+
+        public string GetLectorBirthday(Lector lector)
+        {
+            return client.GetLectorBirthdayById(key, lector.Id);
+        }
+
+        public void SetLectorBirthday(Lector lector, string Birthday)
+        {
+            client.SetLectorBirthdayById(key, lector.Id, Birthday);
+        }
+
+        public string GetSeminarName(Seminar seminar)
+        {
+            return client.GetSeminarNameById(key, seminar.Id);
+        }
+
+        public void SetSeminarName(Seminar seminar, string Name)
+        {
+            client.SetSeminarNameById(key, seminar.Id, Name);
         }
 
         public Lector GetLectorById(int Id)

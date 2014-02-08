@@ -53,7 +53,12 @@ namespace LectorsSeminarsWCFClientLayer
         override public void RereadName()
         {
             if (sessionWraperFromWCF != null)                
-                _Name = sessionWraperFromWCF.GetSeminarNameById(Id);
+                _Name = sessionWraperFromWCF.GetSeminarName(this);
+        }
+
+        public override void SaveName()
+        {
+            sessionWraperFromWCF.SetSeminarName(this,_Name);
         }
     }
 }

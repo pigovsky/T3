@@ -15,51 +15,53 @@ namespace T3
 {
     public partial class EditLectorDialog : Form
     {
-        private Lector lector;
+        
+        public Lector lector { get; set; }
 
-        public EditLectorDialog()
+        public EditLectorDialog(SessionWraperFromWCF client)
+            : this(client, null)
+        {            
+        }
+
+        public EditLectorDialog(SessionWraperFromWCF client, Lector lector) 
         {
             InitializeComponent();
-        }
-
-        public EditLectorDialog(Lector lector) : this()
-        {
-            // TODO: Complete member initialization
+            this.client = client;            
             this.lector = lector;
-            PhotoData = lector.LectorPhotoData;
-            if (lector.LectorPhotoName!=null)
-                pictureBoxPhoto.Image = Image.FromFile(Lector.img+ lector.LectorPhotoName);
-            LectorName = lector.Name;
+ 
+            if (lector!=null)
+            {                               
+                if (lector.Name!=null)
+                    textBoxName.Text = lector.Name;
+                if (lector.Birthday != null)
+                    try
+                    {
+                        dateTimePickerBirthday.Value = DateTime.Parse(lector.Birthday);
+                    }
+                    catch (Exception e) { }
+                if (lector.LectorPhotoName != null)
+                    pictureBoxPhoto.Image = Image.FromFile(Lector.img + lector.LectorPhotoName);
+            }                                    
         }
-
-        private string _LectorName;
-
-        public string LectorName 
-        {
-            get
-            {
-                return _LectorName;
-            }
-            set
-            {
-                _LectorName = value;
-                textBoxName.Text = value;
-            }
-        }
-
-        public string PhotoData { get; set; }
-
+        
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            LectorName = textBoxName.Text;
+            if (lector == null)
+                lector = client.CreateLector(textBoxName.Text);
+            else
+                lector.Name = textBoxName.Text;
+            lector.Birthday = dateTimePickerBirthday.Value.ToString("yyyy-MM-dd");
+            if (photoData !=null)
+                lector.LectorPhotoData = photoData;
             Hide();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
-        {
-            LectorName = null;
+        {            
             Hide();
         }
+
+        private string photoData = null;
 
         private void buttonBrowseForPhoto_Click(object sender, EventArgs e)
         {
@@ -84,8 +86,10 @@ namespace T3
             MemoryStream ms = new MemoryStream();
             pictureBoxPhoto.Image.Save(ms, ImageFormat.Jpeg);
             ms.Position = 0;
-            PhotoData = Convert.ToBase64String(ms.ToArray());
+            photoData = Convert.ToBase64String(ms.ToArray());
             ms.Close();
         }
+
+        public SessionWraperFromWCF client { get; set; }
     }
 }

@@ -23,6 +23,30 @@ namespace LectorsSeminarsWCFClientLayer.LectorsSeminarsDataAccessLayerWCFService
             "se")]
         System.Threading.Tasks.Task<string> GetLectorNameByIdAsync(string sessionKey, int Id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetLectorNameById", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetLectorNameByIdRespon" +
+            "se")]
+        void SetLectorNameById(string sessionKey, int Id, string Name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetLectorNameById", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetLectorNameByIdRespon" +
+            "se")]
+        System.Threading.Tasks.Task SetLectorNameByIdAsync(string sessionKey, int Id, string Name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorBirthdayById", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorBirthdayByIdRe" +
+            "sponse")]
+        string GetLectorBirthdayById(string sessionKey, int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorBirthdayById", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetLectorBirthdayByIdRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<string> GetLectorBirthdayByIdAsync(string sessionKey, int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetLectorBirthdayById", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetLectorBirthdayByIdRe" +
+            "sponse")]
+        void SetLectorBirthdayById(string sessionKey, int Id, string Birthday);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetLectorBirthdayById", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetLectorBirthdayByIdRe" +
+            "sponse")]
+        System.Threading.Tasks.Task SetLectorBirthdayByIdAsync(string sessionKey, int Id, string Birthday);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorIds", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllLectorIdsResponse" +
             "")]
         int[] GetAllLectorIds(string sessionKey);
@@ -58,6 +82,14 @@ namespace LectorsSeminarsWCFClientLayer.LectorsSeminarsDataAccessLayerWCFService
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetSeminarNameById", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetSeminarNameByIdRespo" +
             "nse")]
         System.Threading.Tasks.Task<string> GetSeminarNameByIdAsync(string sessionKey, int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetSeminarNameById", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetSeminarNameByIdRespo" +
+            "nse")]
+        void SetSeminarNameById(string sessionKey, int Id, string Name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetSeminarNameById", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/SetSeminarNameByIdRespo" +
+            "nse")]
+        System.Threading.Tasks.Task SetSeminarNameByIdAsync(string sessionKey, int Id, string Name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminarIds", ReplyAction="http://tempuri.org/ILectorsSeminarsDataAccessLayerService/GetAllSeminarIdsRespons" +
             "e")]
@@ -207,6 +239,30 @@ namespace LectorsSeminarsWCFClientLayer.LectorsSeminarsDataAccessLayerWCFService
             return base.Channel.GetLectorNameByIdAsync(sessionKey, Id);
         }
         
+        public void SetLectorNameById(string sessionKey, int Id, string Name) {
+            base.Channel.SetLectorNameById(sessionKey, Id, Name);
+        }
+        
+        public System.Threading.Tasks.Task SetLectorNameByIdAsync(string sessionKey, int Id, string Name) {
+            return base.Channel.SetLectorNameByIdAsync(sessionKey, Id, Name);
+        }
+        
+        public string GetLectorBirthdayById(string sessionKey, int Id) {
+            return base.Channel.GetLectorBirthdayById(sessionKey, Id);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetLectorBirthdayByIdAsync(string sessionKey, int Id) {
+            return base.Channel.GetLectorBirthdayByIdAsync(sessionKey, Id);
+        }
+        
+        public void SetLectorBirthdayById(string sessionKey, int Id, string Birthday) {
+            base.Channel.SetLectorBirthdayById(sessionKey, Id, Birthday);
+        }
+        
+        public System.Threading.Tasks.Task SetLectorBirthdayByIdAsync(string sessionKey, int Id, string Birthday) {
+            return base.Channel.SetLectorBirthdayByIdAsync(sessionKey, Id, Birthday);
+        }
+        
         public int[] GetAllLectorIds(string sessionKey) {
             return base.Channel.GetAllLectorIds(sessionKey);
         }
@@ -237,6 +293,14 @@ namespace LectorsSeminarsWCFClientLayer.LectorsSeminarsDataAccessLayerWCFService
         
         public System.Threading.Tasks.Task<string> GetSeminarNameByIdAsync(string sessionKey, int Id) {
             return base.Channel.GetSeminarNameByIdAsync(sessionKey, Id);
+        }
+        
+        public void SetSeminarNameById(string sessionKey, int Id, string Name) {
+            base.Channel.SetSeminarNameById(sessionKey, Id, Name);
+        }
+        
+        public System.Threading.Tasks.Task SetSeminarNameByIdAsync(string sessionKey, int Id, string Name) {
+            return base.Channel.SetSeminarNameByIdAsync(sessionKey, Id, Name);
         }
         
         public int[] GetAllSeminarIds(string sessionKey) {

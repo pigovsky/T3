@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -57,7 +59,8 @@ namespace T3
                 if (seminar.Lectors.Count > 0)
                     seminarNode.Nodes.Add("stub");
             }
-            lectorsListBox.Items.Clear();
+            
+            lectorsListBox.Refresh();
         }
 
         private void seminarsAndLectorsTreeView_BeforeExpand(object sender, TreeViewCancelEventArgs e)
@@ -71,12 +74,11 @@ namespace T3
             foreach(var lector in seminar.Lectors)
             {
                 var name = lector.Name;
-                if (name != null)
-                {
-                    TreeNode lectorNode = new TreeNode(name);
-                    seminarNode.Nodes.Add(lectorNode);
-                    lectorNode.Tag = lector;
-                }
+                if (name == null)
+                    name = "";                                
+                TreeNode lectorNode = new TreeNode(name);
+                seminarNode.Nodes.Add(lectorNode);
+                lectorNode.Tag = lector;                
             }
         }
 
@@ -92,9 +94,10 @@ namespace T3
 
             lectorsListBox.Items.Clear();
             foreach (var lector in seminar.Lectors)
-            {                
-                if (lector.Name!=null)
-                    lectorsListBox.Items.Add(lector);
+            {       
+                if (lector.Name==null)
+                    lector.Name="";                
+                lectorsListBox.Items.Add(lector);
             }
 
             lectorsListBox.Tag = seminar;
@@ -277,17 +280,49 @@ namespace T3
             whereMouseWasDown = e.Location;
         }
 
+        // This method is written by flipuhdelphia
+        public static string StreamToString(Stream stream)
+        {
+            stream.Position = 0;
+            using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+            {
+                return reader.ReadToEnd();
+            }
+        }
+
+
+
         private void lectorsListBox_SelectedValueChanged(object sender, EventArgs e)
         {
             try
             {
                 Lector lector = lectorsListBox.SelectedItem as Lector;
+                // Get photo first, because this way we create img directory
+                // when it is absent
+                string photo = lector.LectorPhotoName;
 
-                previewPaneWebBrowser.Url = new Uri("file://" + Environment.CurrentDirectory +"/" + Lector.img + lector.LectorPhotoName);
+                // temporary html file for lector description
+                string tmpHtml = Lector.img + "tmp.htm";
+                File.Delete(tmpHtml);
+                //var ress = Assembly.GetExecutingAssembly().GetManifestResourceNames();
+
+                string content = "";
+                using (Stream s = Assembly.GetExecutingAssembly().GetManifestResourceStream("T3.LectorInfoTemplate.html"))
+                {
+                    content = StreamToString(s);                    
+                }
+                content = content.Replace("$lectorName", lector.Name)
+                        .Replace("$lectorBirthday", lector.Birthday)
+                        .Replace("$lectorPhoto", photo);
+                var fd = new StreamWriter(File.OpenWrite(tmpHtml));
+                fd.Write(content);
+                fd.Close();
+
+                previewPaneWebBrowser.Url = new Uri("file://" + Environment.CurrentDirectory + "/" + tmpHtml);
             }
             catch (Exception err)
             {
-
+                MessageBox.Show(err.Message);
             }
         }
     }

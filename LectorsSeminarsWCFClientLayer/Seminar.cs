@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace T3
+namespace LectorsSeminarsWCFClientLayer
 {
     public class Seminar : IdName
     {
@@ -50,11 +50,10 @@ namespace T3
             this.sessionWraperFromWCF = sessionWraperFromWCF;
         }
 
-        public override string ToString()
+        override public void RereadName()
         {
-            if (sessionWraperFromWCF == null)
-                return null;
-            return sessionWraperFromWCF.GetSeminarNameById(Id);
+            if (sessionWraperFromWCF != null)                
+                _Name = sessionWraperFromWCF.GetSeminarNameById(Id);
         }
     }
 }

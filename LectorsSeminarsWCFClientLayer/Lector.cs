@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace T3
+namespace LectorsSeminarsWCFClientLayer
 {
     public class Lector : IdName
     {
@@ -80,9 +80,11 @@ namespace T3
             }
         }        
 
-        public override string ToString()
+        
+
+        override public void RereadName()
         {
-            return sessionWraperFromWCF.GetLectorNameById(Id) ;
+            _Name = sessionWraperFromWCF.GetLectorNameById(Id);
         }
     }
 }

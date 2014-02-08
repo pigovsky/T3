@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace T3.LectorsSeminarsDataAccessLayerWCFService {
+namespace LectorsSeminarsWCFClientLayer.LectorsSeminarsDataAccessLayerWCFService {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -173,12 +173,12 @@ namespace T3.LectorsSeminarsDataAccessLayerWCFService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ILectorsSeminarsDataAccessLayerServiceChannel : T3.LectorsSeminarsDataAccessLayerWCFService.ILectorsSeminarsDataAccessLayerService, System.ServiceModel.IClientChannel {
+    public interface ILectorsSeminarsDataAccessLayerServiceChannel : LectorsSeminarsWCFClientLayer.LectorsSeminarsDataAccessLayerWCFService.ILectorsSeminarsDataAccessLayerService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class LectorsSeminarsDataAccessLayerServiceClient : System.ServiceModel.ClientBase<T3.LectorsSeminarsDataAccessLayerWCFService.ILectorsSeminarsDataAccessLayerService>, T3.LectorsSeminarsDataAccessLayerWCFService.ILectorsSeminarsDataAccessLayerService {
+    public partial class LectorsSeminarsDataAccessLayerServiceClient : System.ServiceModel.ClientBase<LectorsSeminarsWCFClientLayer.LectorsSeminarsDataAccessLayerWCFService.ILectorsSeminarsDataAccessLayerService>, LectorsSeminarsWCFClientLayer.LectorsSeminarsDataAccessLayerWCFService.ILectorsSeminarsDataAccessLayerService {
         
         public LectorsSeminarsDataAccessLayerServiceClient() {
         }

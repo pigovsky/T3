@@ -61,8 +61,6 @@
     <Compile Include="EditSeminarDialog.Designer.cs">
       <DependentUpon>EditSeminarDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="IdName.cs" />
-    <Compile Include="Lector.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,13 +69,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Seminar.cs" />
-    <Compile Include="Service References\LectorsSeminarsDataAccessLayerWCFService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="SessionWraperFromWCF.cs" />
     <EmbeddedResource Include="EditLectorDialog.resx">
       <DependentUpon>EditLectorDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,7 +87,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -106,37 +99,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\LectorsSeminarsDataAccessLayerWCFService\item.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\LectorsSeminarsDataAccessLayerWCFService\item1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\LectorsSeminarsDataAccessLayerWCFService\item2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\LectorsSeminarsDataAccessLayerWCFService\LectorsSeminarsDataAccessLayerService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="hibernate.cfg.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <None Include="Service References\LectorsSeminarsDataAccessLayerWCFService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\LectorsSeminarsDataAccessLayerWCFService\configuration.svcinfo" />
-    <None Include="Service References\LectorsSeminarsDataAccessLayerWCFService\configuration91.svcinfo" />
-    <None Include="Service References\LectorsSeminarsDataAccessLayerWCFService\item.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\LectorsSeminarsDataAccessLayerWCFService\" />
+    <ProjectReference Include="..\LectorsSeminarsWCFClientLayer\LectorsSeminarsWCFClientLayer.csproj">
+      <Project>{12f32826-d760-4064-a5e0-aeddc9c57835}</Project>
+      <Name>LectorsSeminarsWCFClientLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

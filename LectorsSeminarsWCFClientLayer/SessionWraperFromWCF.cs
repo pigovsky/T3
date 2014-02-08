@@ -1,12 +1,13 @@
-﻿using System;
+﻿using LectorsSeminarsWCFClientLayer.LectorsSeminarsDataAccessLayerWCFService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using T3.LectorsSeminarsDataAccessLayerWCFService;
 
 
-namespace T3
+
+namespace LectorsSeminarsWCFClientLayer
 {
     public class SessionWraperFromWCF
     {
